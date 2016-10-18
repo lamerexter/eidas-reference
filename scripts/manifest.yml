@@ -1,11 +1,15 @@
 ---
 applications:
-- memory: 512M
+- memory: 1G
   buildpack: java_buildpack
+  services:
+    - newrelic
 
 env:
   EIDAS_CONFIG_REPOSITORY: WEB-INF/
   EIDAS_KEYSTORE: WEB-INF/eidasKeystore.jks
-  EIDAS_HOST: http://127.0.0.1:8080
-  IDP_URL: http://127.0.0.1:8080
-  IDP_SSO_URL: https://127.0.0.1:8080
+  SP_URL: https://stub-sp-reference.cloudapps.digital
+  CONNECTOR_URL: https://uk-connector-node-reference.cloudapps.digital
+  IDP_URL: https://stub-idp-reference.cloudapps.digital
+  IDP_SSO_URL: https://stub-idp-reference.cloudapps.digital
+
