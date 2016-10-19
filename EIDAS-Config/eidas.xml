@@ -224,8 +224,8 @@
 	<entry key="metadata.http.retrieval">true</entry>
 	
          <!-- Eidas Node Service Metadata Single Sign On locations for ServiceMetadata-->
-	<entry key="ssos.serviceMetadataGeneratorIDP.redirect.location">${PROXY_URL}/ColleagueRequest</entry>
-	<entry key="ssos.serviceMetadataGeneratorIDP.post.location">${PROXY_URL}/ColleagueRequest</entry>
+	<entry key="ssos.serviceMetadataGeneratorIDP.redirect.location">${NODE_METADATA_SSO_LOCATION}</entry>
+	<entry key="ssos.serviceMetadataGeneratorIDP.post.location">${NODE_METADATA_SSO_LOCATION}</entry>
         
          <!-- Eidas Node Service Metadata Single Sign On locations for ConnectorResponseMetadata-->
 	<entry key="ssos.connectorMetadataGeneratorIDP.redirect.location">${CONNECTOR_URL}/ServiceProvider</entry>

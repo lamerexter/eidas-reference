@@ -49,6 +49,7 @@ export EIDAS_KEYSTORE='keystore/eidasKeystore.jks'
 export SP_URL='http://127.0.0.1:8080/SP'
 export CONNECTOR_URL='http://127.0.0.1:8080/ConnectorNode'
 export PROXY_URL='http://127.0.0.1:8080/ProxyNode'
+export NODE_METADATA_SSO_LOCATION='http://127.0.0.1:8080/ProxyNode/ColleagueRequest'
 export IDP_URL='http://127.0.0.1:8080/IdP'
 export IDP_SSO_URL='https://127.0.0.1:8080/IdP'
 

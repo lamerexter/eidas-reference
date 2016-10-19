@@ -49,6 +49,7 @@ $env:EIDAS_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/eidasKeys
 $env:SP_URL="http://127.0.0.1:8080/SP"
 $env:CONNECTOR_URL="http://127.0.0.1:8080/EidasNode"
 $env:PROXY_URL="http://127.0.0.1:8080/ProxyNode"
+$env:NODE_METADATA_SSO_LOCATION="http://127.0.0.1:8080/ProxyNode/ColleagueRequest"
 $env:IDP_URL="http://127.0.0.1:8080/IdP"
 $env:IDP_SSO_URL="https://127.0.0.1:8080/IdP"
 $env:EIDAS_CONFIG_REPOSITORY="$project_root/EIDAS-Config/"
