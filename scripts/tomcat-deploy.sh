@@ -19,40 +19,37 @@ else
 fi
 
 # ---------------------------
-# Rebuild Everything
+# Build
 # ---------------------------
+
 mvn --file EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
 
 # ---------------------------
-# Deploy the Service Provider
+# Deploy
 # ---------------------------
 
 # Deploy the SP
 cp "$project_root"/EIDAS-SP/target/SP.war "$CATALINA_HOME/webapps"
 
-# ---------------------------
 # Deploy the Connector Node
-# ---------------------------
+cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/ConnectorNode.war"
 
-# Deploy the Node
-cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps"
-
-# ---------------------------
-# Deploy the IdP
-# ---------------------------
+# Deploy the Proxy Node
+cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/ProxyNode.war"
 
 # Deploy the IdP
 cp "$project_root"/EIDAS-IdP-1.0/target/IdP.war "$CATALINA_HOME/webapps"
 
-export EIDAS_CONFIG_REPOSITORY="$project_root"/EIDAS-Config/
-export EIDAS_KEYSTORE='keystore/eidasKeystore.jks'
-export SP_URL='http://127.0.0.1:8080/SP'
-export CONNECTOR_URL='http://127.0.0.1:8080/EidasNode'
-export IDP_URL='http://127.0.0.1:8080/IdP'
-export IDP_SSO_URL='https://127.0.0.1:8080/IdP'
-
 # ---------------------------
 # Start Tomcat
 # ---------------------------
+
+export EIDAS_CONFIG_REPOSITORY="$project_root"/EIDAS-Config/
+export EIDAS_KEYSTORE='keystore/eidasKeystore.jks'
+export SP_URL='http://127.0.0.1:8080/SP'
+export CONNECTOR_URL='http://127.0.0.1:8080/ConnectorNode'
+export PROXY_URL='http://127.0.0.1:8080/ProxyNode'
+export IDP_URL='http://127.0.0.1:8080/IdP'
+export IDP_SSO_URL='https://127.0.0.1:8080/IdP'
 
 catalina run
