@@ -47,7 +47,7 @@ Copy-Item "$project_root/EIDAS-IdP-1.0/target/IdP.war" "$env:CATALINA_HOME/webap
 
 $env:EIDAS_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/eidasKeystore.jks"
 $env:SP_URL="http://127.0.0.1:8080/SP"
-$env:CONNECTOR_URL="http://127.0.0.1:8080/EidasNode"
+$env:CONNECTOR_URL="http://127.0.0.1:8080/ConnectorNode"
 $env:PROXY_URL="http://127.0.0.1:8080/ProxyNode"
 $env:NODE_METADATA_SSO_LOCATION="http://127.0.0.1:8080/ProxyNode/ColleagueRequest"
 $env:IDP_URL="http://127.0.0.1:8080/IdP"
