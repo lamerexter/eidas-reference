@@ -49,33 +49,19 @@
     <!--
         This define the FULL Detailed log file appender - the level of the console appender is INFO by default
     -->
-    <appender name="eIDASNodeDetail" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/eIDASNodeDetail.log</file>
-
+    <appender name="eIDASNodeDetail" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
-        <encoder class="eu.eidas.node.logging.logback_integrity.HashPatternLayoutEncoder">
+        <encoder>
             <pattern>%d{yyyy-MM-dd; HH:mm:ss.SSS} [%thread] %-5level %logger{66} %marker -%X{sessionId} -%X{remoteHost} -%msg%n</pattern>
         </encoder>
-        <param name="Append" value="true" />
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <maxFileSize>500KB</maxFileSize>
-        </triggeringPolicy>
-        <!-- Support multiple-JVM writing to the same log file -->
-        <prudent>true</prudent>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>eIDASNodeDetail.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>14</maxHistory>
-        </rollingPolicy>
     </appender>
 
     <!--
         This define the SYSTEM Detailed log file appender - the default Filter is inherited from root level
     -->
-    <appender name="eIDASNodeSystem" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/eIDASNodeSystem.log</file>
-
+    <appender name="eIDASNodeSystem" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
             <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
                 <marker>SYSTEM</marker>
@@ -83,24 +69,15 @@
             <onMismatch>DENY</onMismatch>
             <onMatch>ACCEPT</onMatch>
         </filter>
-        <encoder class="eu.eidas.node.logging.logback_integrity.HashPatternLayoutEncoder">
+        <encoder>
             <pattern>%d{yyyy-MM-dd; HH:mm:ss.SSS} [%thread] %-5level %logger{66} %marker -%X{sessionId} -%X{remoteHost} -%msg%n</pattern>
         </encoder>
-        <param name="Append" value="true" />
-        <!-- Support multiple-JVM writing to the same log file -->
-        <prudent>true</prudent>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>eIDASNodeSystem.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>14</maxHistory>
-        </rollingPolicy>
     </appender>
 
     <!--
         This define the SECURITY Detailed log file appender - the default Filter is inherited from root level
     -->
-    <appender name="eIDASNodeSecurity" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/eIDASNodeSecurity.log</file>
-
+    <appender name="eIDASNodeSecurity" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
             <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
                 <marker>SECURITY_SUCCESS</marker>
@@ -110,24 +87,15 @@
             <onMismatch>DENY</onMismatch>
             <onMatch>ACCEPT</onMatch>
         </filter>
-        <encoder class="eu.eidas.node.logging.logback_integrity.HashPatternLayoutEncoder">
+        <encoder>
             <pattern>%d{yyyy-MM-dd; HH:mm:ss.SSS} [%thread] %-5level %logger{66} %marker -%X{sessionId} -%X{remoteHost} -%msg%n</pattern>
         </encoder>
-        <param name="Append" value="true" />
-        <!-- Support multiple-JVM writing to the same log file -->
-        <prudent>true</prudent>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>eIDASNodeSecurity.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>14</maxHistory>
-        </rollingPolicy>
     </appender>
 
     <!--
         This define the SAML exchange Detailed log file appender - the default Filter is inherited from root level
     -->
-    <appender name="eIDASNodeSAMLExchange" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_HOME}/eIDASNodeSAMLExchange.log</file>
-
+    <appender name="eIDASNodeSAMLExchange" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
             <evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
                 <marker>SAML_EXCHANGE</marker>
@@ -135,16 +103,9 @@
             <onMismatch>DENY</onMismatch>
             <onMatch>ACCEPT</onMatch>
         </filter>
-        <encoder class="eu.eidas.node.logging.logback_integrity.HashPatternLayoutEncoder">
+        <encoder>
             <pattern>%d{yyyy-MM-dd; HH:mm:ss.SSS} [%thread] %-5level %logger{66} %marker -%X{sessionId} -%X{remoteHost} -%msg%n</pattern>
         </encoder>
-        <param name="Append" value="true" />
-        <!-- Support multiple-JVM writing to the same log file -->
-        <prudent>true</prudent>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>eIDASNodeSAMLExchange.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>14</maxHistory>
-        </rollingPolicy>
     </appender>
 
     <!--
