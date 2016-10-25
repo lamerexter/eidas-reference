@@ -495,34 +495,16 @@
                 <groupId>xerces</groupId>
                 <artifactId>xercesImpl</artifactId>
                 <version>${xerces.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>xml-apis</groupId>
-                        <artifactId>xml-apis</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>xalan</groupId>
                 <artifactId>xalan</artifactId>
                 <version>${xalan.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>xml-apis</groupId>
-                        <artifactId>xml-apis</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>xalan</groupId>
                 <artifactId>serializer</artifactId>
                 <version>${xalan.version}</version>
-                <exclusions>
-                    <exclusion><!-- upsets jboss 6 -->
-                        <groupId>xml-apis</groupId>
-                        <artifactId>xml-apis</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>xml-apis</groupId>
@@ -746,6 +728,12 @@
                                 <includes>
                                     <include>**/web.xml</include>
                                 </includes>
+                            </resource>
+                            <resource>
+                              <directory>${project.basedir}/../EIDAS-Config</directory>
+                              <includes>
+                                <include>*</include>
+                              </includes>
                             </resource>
                         </webResources>
                     </configuration>

@@ -36,26 +36,6 @@
             <artifactId>eidas-saml-engine</artifactId>
             <exclusions>
                 <exclusion>
-                    <groupId>xalan</groupId>
-                    <artifactId>serializer</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xalan</groupId>
-                    <artifactId>xalan</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xerces</groupId>
-                    <artifactId>xercesImpl</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xml-resolver</groupId>
-                    <artifactId>xml-resolver</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>xml-apis</groupId>
-                    <artifactId>xml-apis</artifactId>
-                </exclusion>
-                <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-log4j12</artifactId>
                 </exclusion>
@@ -120,6 +100,23 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                  <webResources>
+                    <resource>
+                      <directory>${project.basedir}/../EIDAS-Config</directory>
+                      <includes>
+                        <include>*</include>
+                      </includes>
+                    </resource>
+                      <resource>
+                          <directory>${project.basedir}/../keystore</directory>
+                          <targetPath>WEB-INF</targetPath>
+                          <includes>
+                              <include>*.jks</include>
+                          </includes>
+                      </resource>
+                  </webResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
