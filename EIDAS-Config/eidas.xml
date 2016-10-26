@@ -265,7 +265,7 @@
 	<!-- allows metadata retrieval only using https -->
 	<entry key="metadata.restrict.http">false</entry>
 	<!-- enforce encryption of the SAML response -->
-	<entry key="response.encryption.mandatory">false</entry>
+	<entry key="response.encryption.mandatory">true</entry>
 
 	<!-- disable the check that the list of attributes contains at least the minimum set (when set to true) -->
 	<entry key="disable.check.mandatory.eidas.attributes">false</entry>
