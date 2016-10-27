@@ -216,9 +216,9 @@
         <entry key="connector.metadata.url">${CONNECTOR_URL}/ConnectorMetadata</entry>
 	
        <!--service Metadata -->
-        <entry key="service.node.url">${CONNECTOR_URL}/</entry>
+        <entry key="service.node.url">${PROXY_URL}/</entry>
         <entry key="service.contact.email">test@com</entry>
-        <entry key="service.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
+        <entry key="service.metadata.url">${PROXY_URL}/ServiceMetadata</entry>
  	
 	<entry key="metadata.file.repository">c:\Pgm\projects\configeidas\tomcat\metadata</entry>
 	<entry key="metadata.http.retrieval">true</entry>
@@ -282,7 +282,7 @@
 	<!-- connector metadata url, advertising connector as IdP, for communication with the SP -->
 	<entry key="connector.responder.metadata.url">${CONNECTOR_URL}/ConnectorResponderMetadata</entry>
 	<!-- service/Specific metadata url, advertising connector as SP - for communication with the IdP -->
-	<entry key="service.requester.metadata.url">${CONNECTOR_URL}/ServiceRequesterMetadata</entry>
+	<entry key="service.requester.metadata.url">${PROXY_URL}/ServiceRequesterMetadata</entry>
 
 	<!-- whether the connector supports SPs not able to create SAML requests -->
 	<entry key="eidas.supportFramingSamlRequest">false</entry>
