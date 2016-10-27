@@ -45,7 +45,14 @@ Copy-Item "$project_root/EIDAS-IdP-1.0/target/IdP.war" "$env:CATALINA_HOME/webap
 # Start Tomcat
 # ---------------------------
 
-$env:EIDAS_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/eidasKeystore.jks"
+#$env:EIDAS_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/eidasKeystore.jks"
+
+$env:STUB_SP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubSpKeystore.jks"
+$env:CONNECTOR_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/connectorNodeKeystore.jks"
+$env:PROXY_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/proxyNodeKeystore.jks"
+$env:STUB_IDP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubIdpKeystore.jks"
+
+
 $env:SP_URL="http://127.0.0.1:8080/SP"
 $env:CONNECTOR_URL="http://127.0.0.1:8080/ConnectorNode"
 $env:PROXY_URL="http://127.0.0.1:8080/ProxyNode"
