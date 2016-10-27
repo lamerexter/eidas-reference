@@ -26,7 +26,7 @@
 
 
     <!--  If not present then no encryption will be applied on response -->
-    <entry key="keyStorePath">${EIDAS_KEYSTORE}</entry>
+    <entry key="keyStorePath">${STUB_IDP_KEYSTORE}</entry>
     <entry key="responseToPointIssuer.BE">CN=Test Proxy Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
     <entry key="responseToPointSerialNumber.BE">6641716bee633fb618dbd85b7d41e63b62046c2d</entry>
 

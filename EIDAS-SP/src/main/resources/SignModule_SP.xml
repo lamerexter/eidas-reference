@@ -33,7 +33,7 @@
 		http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512 </entry>
 	<!-- signing response assertion true/false (default false) -->
 	<entry key="response.sign.assertions">false</entry>
-	<entry key="keyStorePath">${EIDAS_KEYSTORE}</entry>
+	<entry key="keyStorePath">${STUB_SP_KEYSTORE}</entry>
 	<entry key="keyStorePassword">Password</entry>
 	<entry key="keyPassword">Password</entry>
 	<entry key="issuer">CN=Test Stub SP Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
