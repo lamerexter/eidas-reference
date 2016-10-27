@@ -27,12 +27,12 @@
 
     <!--  If not present then no encryption will be applied on response -->
     <entry key="keyStorePath">${STUB_IDP_KEYSTORE}</entry>
-    <entry key="responseToPointIssuer.BE">CN=Test Proxy Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="responseToPointSerialNumber.BE">6641716bee633fb618dbd85b7d41e63b62046c2d</entry>
+    <entry key="responseToPointIssuer.BE">CN=Test Stub IdP Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
+    <entry key="responseToPointSerialNumber.BE">33f87edbd5d9c0b386b826e1ae7370a28107dd74</entry>
 
     <!--  If not present then no decryption will be applied on response -->
-    <entry key="responseDecryptionIssuer">CN=Test Proxy Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="serialNumber">6641716bee633fb618dbd85b7d41e63b62046c2d</entry>
+    <entry key="responseDecryptionIssuer">CN=Test Stub IdP Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
+    <entry key="serialNumber">33f87edbd5d9c0b386b826e1ae7370a28107dd74</entry>
 
 
 </properties>
