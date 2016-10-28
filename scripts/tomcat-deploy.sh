@@ -47,8 +47,8 @@ cp "$project_root"/EIDAS-IdP-1.0/target/IdP.war "$CATALINA_HOME/webapps"
 export EIDAS_CONFIG_REPOSITORY="$project_root"/EIDAS-Config/
 export EIDAS_KEYSTORE='keystore/eidasKeystore.jks'
 export STUB_SP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubSpKeystore.jks"
-export CONNECTOR_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/connectorNodeKeystore.jks"
-export PROXY_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/proxyNodeKeystore.jks"
+export CONNECTOR_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/nodeKeystore.jks"
+export PROXY_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/nodeKeystore.jks"
 export STUB_IDP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubIdpKeystore.jks"
 export SP_URL='http://127.0.0.1:8080/SP'
 export CONNECTOR_URL='http://127.0.0.1:8080/ConnectorNode'
