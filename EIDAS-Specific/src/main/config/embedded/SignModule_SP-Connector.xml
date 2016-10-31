@@ -36,7 +36,7 @@
     <entry key="keyStorePath">${CONNECTOR_NODE_KEYSTORE}</entry>
     <entry key="keyStorePassword">Password</entry>
     <entry key="keyPassword">Password</entry>
-    <entry key="issuer">CN=Test Connector Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="serialNumber">763709571da44ef6d323f7ae1ea4c3a4358fd81c</entry>
+    <entry key="issuer">CN=Test Connector Metadata Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
+    <entry key="serialNumber">56520de46a76cb6ad7b9c238dd253d88904da9d8</entry>
     <entry key="keyStoreType">JKS</entry>
 </properties>

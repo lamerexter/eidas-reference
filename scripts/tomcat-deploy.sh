@@ -44,7 +44,7 @@ for file in $FILES_TO_REPLACE; do
     -e 's/CONNECTOR_NODE_KEYSTORE/PROXY_NODE_KEYSTORE/' \
     -e 's/CN=Test Connector/CN=Test Proxy/' \
     -e 's/1dcfdeedc8983a5f13f2338e0814b6e47090b3d7/6641716bee633fb618dbd85b7d41e63b62046c2d/' \
-    -e 's/763709571da44ef6d323f7ae1ea4c3a4358fd81c/13b0d8b35ed284356bf14e1759473d7fc55f2deb/' $file
+    -e 's/56520de46a76cb6ad7b9c238dd253d88904da9d8/203b6cb0714922c675e08606187e75c4c4457a1c/' $file
 done
 
 mvn --file EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true

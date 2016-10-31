@@ -36,7 +36,7 @@
 	<entry key="keyStorePath">${STUB_SP_KEYSTORE}</entry>
 	<entry key="keyStorePassword">Password</entry>
 	<entry key="keyPassword">Password</entry>
-	<entry key="issuer">CN=Test Stub SP Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-	<entry key="serialNumber">34def1582d87a2fde5e6814b7091294b99cebd11</entry>
+	<entry key="issuer">CN=Test Stub SP Metadata Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
+	<entry key="serialNumber">123f7141d99aa3b6ad31211dabb9ca7abdc08b5d</entry>
 	<entry key="keyStoreType">JKS</entry>
 </properties>
