@@ -40,10 +40,11 @@ cp "$project_root"/EIDAS-IdP-1.0/target/IdP.war "$CATALINA_HOME/webapps"
 # Hack - reconfigure the Node to be a proxy node instead of a connector node
 FILES_TO_REPLACE=$(git grep 'CONNECTOR_NODE_KEYSTORE' | cut -d: -f1 | grep .xml | sort -u)
 for file in $FILES_TO_REPLACE; do
-  sed -i '.original' 's/CONNECTOR_NODE_KEYSTORE/PROXY_NODE_KEYSTORE/' $file
-  sed -i% 's/CN=Test Connector/CN=Test Proxy/' $file
-  sed -i% 's/1dcfdeedc8983a5f13f2338e0814b6e47090b3d7/6641716bee633fb618dbd85b7d41e63b62046c2d/' $file
-  sed -i% 's/763709571da44ef6d323f7ae1ea4c3a4358fd81c/13b0d8b35ed284356bf14e1759473d7fc55f2deb/' $file
+  sed -i '.original' \
+    -e 's/CONNECTOR_NODE_KEYSTORE/PROXY_NODE_KEYSTORE/' \
+    -e 's/CN=Test Connector/CN=Test Proxy/' \
+    -e 's/1dcfdeedc8983a5f13f2338e0814b6e47090b3d7/6641716bee633fb618dbd85b7d41e63b62046c2d/' \
+    -e 's/763709571da44ef6d323f7ae1ea4c3a4358fd81c/13b0d8b35ed284356bf14e1759473d7fc55f2deb/' $file
 done
 
 mvn --file EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
@@ -53,7 +54,6 @@ cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/Proxy
 
 # Restore the modified files from their backups
 find . -name "*.original" -exec sh -c 'mv -f $0 ${0%.original}' {} \;
-find . -name "*.xml%" -delete
 
 # ---------------------------
 # Start Tomcat
