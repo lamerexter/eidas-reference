@@ -22,7 +22,8 @@ Invoke-Expression "$env:CATALINA_HOME\bin\shutdown.bat"
 #Clean out tomcat deployment directory
 Remove-Item $env:CATALINA_HOME\webapps\*.war
 Remove-Item $env:CATALINA_HOME\webapps\SP -Recurse
-Remove-Item $env:CATALINA_HOME\webapps\EidasNode -Recurse
+Remove-Item $env:CATALINA_HOME\webapps\ConnectorNode -Recurse
+Remove-Item $env:CATALINA_HOME\webapps\ProxyNode -Recurse
 Remove-Item $env:CATALINA_HOME\webapps\IdP -Recurse
 
 # ---------------------------
@@ -35,12 +36,43 @@ Copy-Item "$project_root/EIDAS-SP/target/SP.war" "$env:CATALINA_HOME/webapps"
 # Deploy the Connector Node
 Copy-Item "$project_root/EIDAS-Node/target/EidasNode.war" "$env:CATALINA_HOME/webapps/ConnectorNode.war"
 
-# Deploy the Proxy Node
-Copy-Item "$project_root/EIDAS-Node/target/EidasNode.war" "$env:CATALINA_HOME/webapps/ProxyNode.war"
 
 # Deploy the IdP
 Copy-Item "$project_root/EIDAS-IdP-1.0/target/IdP.war" "$env:CATALINA_HOME/webapps"
 
+
+# Hack - reconfigure the Node to be a proxy node instead of a connector node
+$files = Get-ChildItem -Recurse -include "*.xml"| Select-String "CONNECTOR_NODE_KEYSTORE" -List | Select -unique Path
+
+foreach ($file in $files)
+{
+Copy-Item $file.Path ($file.Path + ".backup")
+    (Get-Content $file.Path) | 
+      Foreach-Object {
+      $content = $_ -replace "CONNECTOR_NODE_KEYSTORE", "PROXY_NODE_KEYSTORE" ; 
+      $content = $content -replace "CN=Test Connector", "CN=Test Proxy";
+      $content = $content -replace "1dcfdeedc8983a5f13f2338e0814b6e47090b3d7", "6641716bee633fb618dbd85b7d41e63b62046c2d";
+      $content = $content -replace "763709571da44ef6d323f7ae1ea4c3a4358fd81c", "13b0d8b35ed284356bf14e1759473d7fc55f2deb"
+      $content
+      } |
+      Set-Content $file.Path
+    
+} 
+
+# Build proxy node
+mvn clean install -file "$project_root/EIDAS-Parent" -P embedded -P coreDependencies -D maven.test.skip=true
+
+
+# Deploy the Proxy Node
+Copy-Item "$project_root/EIDAS-Node/target/EidasNode.war" "$env:CATALINA_HOME/webapps/ProxyNode.war"
+
+#change back the Node configs to Connector Node
+$files = Get-ChildItem -Recurse -include "*.xml"| Select-String "PROXY_NODE_KEYSTORE" -List | Select -unique Path
+foreach ($file in $files)
+{
+    Remove-Item $file.Path
+    Move-Item ($file.Path + ".backup") $file.Path    
+}
 # ---------------------------
 # Start Tomcat
 # ---------------------------
@@ -48,8 +80,8 @@ Copy-Item "$project_root/EIDAS-IdP-1.0/target/IdP.war" "$env:CATALINA_HOME/webap
 #$env:EIDAS_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/eidasKeystore.jks"
 
 $env:STUB_SP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubSpKeystore.jks"
-$env:CONNECTOR_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/nodeKeystore.jks"
-$env:PROXY_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/nodeKeystore.jks"
+$env:CONNECTOR_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/connectorNodeKeystore.jks"
+$env:PROXY_NODE_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/proxyNodeKeystore.jks"
 $env:STUB_IDP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubIdpKeystore.jks"
 
 
