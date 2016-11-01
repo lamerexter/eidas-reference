@@ -17,20 +17,20 @@
     <!-- Key Encryption algorithm -->
     <entry key="key.encryption.algorithm">http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p</entry>
 
-    <entry key="keyStorePath">${CONNECTOR_NODE_KEYSTORE}</entry>
-    <entry key="keyStorePassword">Password</entry>
-    <entry key="keyPassword">Password</entry>
+    <entry key="keyStorePath">${NODE_KEYSTORE}</entry>
+    <entry key="keyStorePassword">${NODE_KEYSTORE_PASSWORD}</entry>
+    <entry key="keyPassword">${NODE_KEYSTORE_PASSWORD}</entry>
 
     <!-- Management of the encryption activation -->
     <entry key="encryptionActivation">${EIDAS_CONFIG_REPOSITORY}/encryptionConf.xml</entry>
 
 
-    <entry key="responseToPointIssuer.BE">CN=Test Connector Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="responseToPointSerialNumber.BE">1dcfdeedc8983a5f13f2338e0814b6e47090b3d7</entry>
+    <entry key="responseToPointIssuer.BE">${NODE_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME}</entry>
+    <entry key="responseToPointSerialNumber.BE">${NODE_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER}</entry>
 
     <!--  If not present then no decryption will be applied on response -->
-    <entry key="responseDecryptionIssuer">CN=Test Connector Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="serialNumber">1dcfdeedc8983a5f13f2338e0814b6e47090b3d7</entry>
+    <entry key="responseDecryptionIssuer">${NODE_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME}</entry>
+    <entry key="serialNumber">${NODE_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER}</entry>
 
     <entry key="keyStoreType">JKS</entry>
 </properties>

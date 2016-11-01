@@ -33,10 +33,10 @@
 		http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512 </entry>
 	<!-- signing response assertion true/false (default false) -->
 	<entry key="response.sign.assertions">false</entry>
-	<entry key="keyStorePath">${CONNECTOR_NODE_KEYSTORE}</entry>
-	<entry key="keyStorePassword">Password</entry>
-	<entry key="keyPassword">Password</entry>
-	<entry key="issuer">CN=Test Connector Metadata Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-	<entry key="serialNumber">56520de46a76cb6ad7b9c238dd253d88904da9d8</entry>
+	<entry key="keyStorePath">${NODE_KEYSTORE}</entry>
+	<entry key="keyStorePassword">${NODE_KEYSTORE_PASSWORD}</entry>
+	<entry key="keyPassword">${NODE_KEYSTORE_PASSWORD}</entry>
+	<entry key="issuer">${NODE_SIGNING_CERTIFICATE_DISTINGUISHED_NAME}</entry>
+	<entry key="serialNumber">${NODE_SIGNING_CERTIFICATE_SERIAL_NUMBER}</entry>
 	<entry key="keyStoreType">JKS</entry>
 </properties>
