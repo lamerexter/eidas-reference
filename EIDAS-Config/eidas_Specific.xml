@@ -50,6 +50,6 @@
 	      http://www.w3.org/2009/xmlenc11#aes192-gcm</entry>
 
 	<!-- enforce encryption of the SAML response -->
-	<entry key="response.encryption.mandatory">false</entry>
+	<entry key="response.encryption.mandatory">true</entry>
 
 </properties>
