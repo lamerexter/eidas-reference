@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 
 <properties>
-	<comment>SWModule encrypt with JKS.</comment>
+    <comment>SWModule encrypt with JKS.</comment>
     <entry key="check_certificate_validity_period">false</entry>
     <entry key="disallow_self_signed_certificate">false</entry>
     <entry key="response.encryption.mandatory">true</entry>
@@ -17,8 +17,8 @@
     <!-- Key Encryption algorithm -->
     <entry key="key.encryption.algorithm">http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p</entry>
 
-	<entry key="keyStorePassword">Password</entry>
-	<entry key="keyPassword">Password</entry>
+    <entry key="keyStorePassword">${STUB_IDP_KEYSTORE_PASSWORD}</entry>
+    <entry key="keyPassword">${STUB_IDP_KEYSTORE_PASSWORD}</entry>
     <entry key="keyStoreType">JKS</entry>
 
     <!-- Management of the encryption activation -->
@@ -27,12 +27,12 @@
 
     <!--  If not present then no encryption will be applied on response -->
     <entry key="keyStorePath">${STUB_IDP_KEYSTORE}</entry>
-    <entry key="responseToPointIssuer.BE">CN=Test Stub IdP Encryption 20161031, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="responseToPointSerialNumber.BE">723c0f7f4b45dea5296e53f565535174d0df5218</entry>
+    <entry key="responseToPointIssuer.BE">${STUB_IDP_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME}</entry>
+    <entry key="responseToPointSerialNumber.BE">${STUB_IDP_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER}</entry>
 
     <!--  If not present then no decryption will be applied on response -->
-    <entry key="responseDecryptionIssuer">CN=Test Stub IdP Encryption 20161031, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-    <entry key="serialNumber">723c0f7f4b45dea5296e53f565535174d0df5218</entry>
+    <entry key="responseDecryptionIssuer">${STUB_IDP_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME}</entry>
+    <entry key="serialNumber">${STUB_IDP_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER}</entry>
 
 
 </properties>

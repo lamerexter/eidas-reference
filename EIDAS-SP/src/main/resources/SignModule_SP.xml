@@ -34,9 +34,9 @@
 	<!-- signing response assertion true/false (default false) -->
 	<entry key="response.sign.assertions">false</entry>
 	<entry key="keyStorePath">${STUB_SP_KEYSTORE}</entry>
-	<entry key="keyStorePassword">Password</entry>
-	<entry key="keyPassword">Password</entry>
-	<entry key="issuer">CN=Test Stub SP Metadata Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK</entry>
-	<entry key="serialNumber">123f7141d99aa3b6ad31211dabb9ca7abdc08b5d</entry>
+	<entry key="keyStorePassword">${STUB_SP_KEYSTORE_PASSWORD}</entry>
+	<entry key="keyPassword">${STUB_SP_KEYSTORE_PASSWORD}</entry>
+	<entry key="issuer">${STUB_SP_SIGNING_CERTIFICATE_DISTINGUSHED_NAME}</entry>
+	<entry key="serialNumber">${STUB_SP_SIGNING_CERTIFICATE_SERIAL_NUMBER}</entry>
 	<entry key="keyStoreType">JKS</entry>
 </properties>
