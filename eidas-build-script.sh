@@ -34,11 +34,11 @@ saveArtifact() {
   if [ ! -d "${DEST}" ]; then
     mkdir "${DEST}"
   fi
-  cp "$PROJECTS_DIR/eidas-reference/$FOLDER/target/$WAR" "${DEST}/${ROLE}_${VERSION}.war"
+  cp "$PROJECTS_DIR/$FOLDER/target/$WAR" "${DEST}/${ROLE}_${VERSION}.war"
 }
 
 generateSettingsXml() {
-cat <<EOF > "$PROJECTS_DIR/eidas-reference/settings.xml"
+cat <<EOF > "$PROJECTS_DIR/settings.xml"
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
@@ -66,7 +66,7 @@ main() {
 
   generateSettingsXml
   
-  mvn --file "eidas-reference/EIDAS-Parent/pom.xml" clean install -P embedded -P coreDependencies --settings eidas-reference/settings.xml -Dmaven.test.skip=true
+  mvn --file "EIDAS-Parent/pom.xml" clean install -P embedded -P coreDependencies --settings settings.xml -Dmaven.test.skip=true
      
   saveArtifact    EIDAS-SP    SP.war      stub-sp
   uploadToBintray EIDAS-SP    stub-sp
