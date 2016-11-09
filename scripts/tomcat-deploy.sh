@@ -34,11 +34,11 @@ cp "$project_root"/EIDAS-SP/target/SP.war "$CATALINA_HOME/webapps"
 # Deploy the Connector Node
 cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/ConnectorNode.war"
 
-# Deploy the IdP
-cp "$project_root"/EIDAS-IdP-1.0/target/IdP.war "$CATALINA_HOME/webapps"
-
 # Deploy the Proxy Node
 cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/ProxyNode.war"
+
+# Deploy the IdP
+cp "$project_root"/EIDAS-IdP-1.0/target/IdP.war "$CATALINA_HOME/webapps"
 
 # ---------------------------
 # Environment Variables
