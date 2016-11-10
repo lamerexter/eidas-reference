@@ -12,7 +12,7 @@ This code maintains its original copyright (2016 European Commission) and is lic
 
 ## Getting Started
 
-There are [thorough instructions for getting set up on a range of application servers](https://ec.europa.eu/cefdigital/wiki/download/attachments/30771884/eIDAS%20Node%20Installation%20Manual%20v1.1.pdf)
+There are [thorough instructions for getting set up on a range of application servers (pdf)](https://ec.europa.eu/cefdigital/wiki/download/attachments/30771884/eIDAS%20Node%20Installation%20Manual%20v1.1.pdf)
 provided by CEF digital.
 
 If you just want to get up and running quickly we recommend you use [tomcat](https://tomcat.apache.org/), for which we've provided some scripts to help get you started.
