@@ -45,9 +45,11 @@ The advisable tomcat downoad is the zipped one and not tomcat windows service.*
 
 By default tomcat will run on port 8080, so if all has gone well the applications will be reachable at:
 
-Stub Service Provider - [http://localhost:8080/SP](http://localhost:8080/SP)
-eIDAS Node - [http://localhost:8080/EidasNode](http://localhost:8080/EidasNode)
-Stub Identity Provider - [http://localhost:8080/IdP](http://localhost:8080/IdP)
+* Stub Service Provider - [http://localhost:8080/SP](http://localhost:8080/SP)
+* Connector Node - [http://localhost:8080/ConnectorNode](http://localhost:8080/ConnectorNode)
+* Proxy Node - [http://localhost:8080/ProxyNode](http://localhost:8080/ProxyNode)
+* Stub Identity Provider - [http://localhost:8080/IdP](http://localhost:8080/IdP)
+
 
 ### Editing the code
 
