@@ -22,7 +22,7 @@ fi
 # Build
 # ---------------------------
 
-mvn --file EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
+mvn --file "$project_root"/EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
 
 # ---------------------------
 # Deploy
