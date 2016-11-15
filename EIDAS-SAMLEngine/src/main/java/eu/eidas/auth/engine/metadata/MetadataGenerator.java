@@ -236,6 +236,7 @@ public class MetadataGenerator {
         }
         idpSSODescriptor.addSupportedProtocol(params.idpSamlProtocol);
         fillNameIDFormat(idpSSODescriptor);
+        idpSSODescriptor.getSingleSignOnServices().addAll(buildSingleSignOnServicesBindingLocations());
         if (params.getIdpEngine() != null) {
             if (params.getIdpEngine().getProtocolProcessor() != null
                     && params.getIdpEngine().getProtocolProcessor().getFormat() == SAMLExtensionFormat.EIDAS10) {
@@ -245,8 +246,6 @@ public class MetadataGenerator {
             ProtocolEngineI idpEngine = params.getIdpEngine();
             ((MetadataSignerI) idpEngine.getSigner()).signMetadata(idpSSODescriptor);
         }
-
-        idpSSODescriptor.getSingleSignOnServices().addAll(buildSingleSignOnServicesBindingLocations());
 
         entityDescriptor.getRoleDescriptors().add(idpSSODescriptor);
 
