@@ -218,14 +218,14 @@
        <!--service Metadata -->
         <entry key="service.node.url">${PROXY_URL}/</entry>
         <entry key="service.contact.email">test@com</entry>
-        <entry key="service.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
+        <entry key="service.metadata.url">${PROXY_URL}/ServiceMetadata</entry>
  	
 	<entry key="metadata.file.repository">c:\Pgm\projects\configeidas\tomcat\metadata</entry>
 	<entry key="metadata.http.retrieval">true</entry>
 	
          <!-- Eidas Node Service Metadata Single Sign On locations for ServiceMetadata-->
-	<entry key="ssos.serviceMetadataGeneratorIDP.redirect.location">${NODE_METADATA_SSO_LOCATION}</entry>
-	<entry key="ssos.serviceMetadataGeneratorIDP.post.location">${NODE_METADATA_SSO_LOCATION}</entry>
+	<entry key="ssos.serviceMetadataGeneratorIDP.redirect.location">${PROXY_NODE_METADATA_SSO_LOCATION}</entry>
+	<entry key="ssos.serviceMetadataGeneratorIDP.post.location">${PROXY_NODE_METADATA_SSO_LOCATION}</entry>
         
          <!-- Eidas Node Service Metadata Single Sign On locations for ConnectorResponseMetadata-->
 	<entry key="ssos.connectorMetadataGeneratorIDP.redirect.location">${CONNECTOR_URL}/ServiceProvider</entry>

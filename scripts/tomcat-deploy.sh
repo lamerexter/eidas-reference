@@ -22,7 +22,7 @@ fi
 # Build
 # ---------------------------
 
-mvn --file "$project_root"/EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
+mvn --file "$project_root"/EIDAS-Parent package -P embedded -P coreDependencies -Dmaven.test.skip=true
 
 # ---------------------------
 # Deploy
@@ -43,12 +43,18 @@ for file in $FILES_TO_REPLACE; do
   sed -i '.original' 's/${NODE_/${PROXY_NODE_/g' $file
 done
 
-mvn --file EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
+FILES_TO_REPLACE=$(git grep 'EIDAS_CONFIG_REPOSITORY' | cut -d: -f1 | grep .xml | sort -u)
+for file in $FILES_TO_REPLACE; do
+  sed -i '.configoriginal' 's/EIDAS_CONFIG_REPOSITORY/PROXY_EIDAS_CONFIG_REPOSITORY/g' $file
+done
+
+mvn --file EIDAS-Parent package -P embedded -P coreDependencies -Dmaven.test.skip=true
 
 # Deploy the Proxy Node
 cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/ProxyNode.war"
 
 # Restore the modified files from their backups
+find . -name "*.configoriginal" -exec sh -c 'mv -f $0 ${0%.configoriginal}' {} \;
 find . -name "*.original" -exec sh -c 'mv -f $0 ${0%.original}' {} \;
 
 # ---------------------------
@@ -56,6 +62,7 @@ find . -name "*.original" -exec sh -c 'mv -f $0 ${0%.original}' {} \;
 # ---------------------------
 
 export EIDAS_CONFIG_REPOSITORY="$project_root"/EIDAS-Config/
+export PROXY_EIDAS_CONFIG_REPOSITORY="$project_root"/EIDAS-Config-Proxy-Node/
 
 # Stub SP
 export STUB_SP_KEYSTORE="$project_root/EIDAS-Node/target/EidasNode/WEB-INF/stubSpKeystore.jks"
@@ -96,15 +103,16 @@ export STUB_IDP_SIGNING_CERTIFICATE_DISTINGUISHED_NAME="CN=Test Stub IdP Metadat
 export STUB_IDP_SIGNING_CERTIFICATE_SERIAL_NUMBER="5ae2153c3f9a99824df394abd65f9e1e8ca53365"
 
 # URLs
-export SP_URL='http://127.0.0.1:8080/SP'
-export CONNECTOR_URL='http://127.0.0.1:8080/ConnectorNode'
-export PROXY_URL='http://127.0.0.1:8080/ProxyNode'
-export NODE_METADATA_SSO_LOCATION='http://127.0.0.1:8080/ProxyNode/ColleagueRequest'
-export IDP_URL='http://127.0.0.1:8080/IdP'
-export IDP_SSO_URL='https://127.0.0.1:8080/IdP'
+export SP_URL='http://localhost:8080/SP'
+export CONNECTOR_URL='http://localhost:8080/ConnectorNode'
+export PROXY_URL='http://localhost:8080/ProxyNode'
+export NODE_METADATA_SSO_LOCATION='http://localhost:8080/ConnectorNode/ColleagueRequest'
+export PROXY_NODE_METADATA_SSO_LOCATION='http://localhost:8080/ProxyNode/ColleagueRequest'
+export IDP_URL='http://localhost:8080/IdP'
+export IDP_SSO_URL='https://localhost:8080/IdP'
 
 # ---------------------------
 # Start Tomcat
 # ---------------------------
 
-catalina run
+catalina jpda run
