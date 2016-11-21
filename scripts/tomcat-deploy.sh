@@ -96,12 +96,12 @@ export STUB_IDP_SIGNING_CERTIFICATE_DISTINGUISHED_NAME="CN=Test Stub IdP Metadat
 export STUB_IDP_SIGNING_CERTIFICATE_SERIAL_NUMBER="5ae2153c3f9a99824df394abd65f9e1e8ca53365"
 
 # URLs
-export SP_URL='http://127.0.0.1:8080/SP'
-export CONNECTOR_URL='http://127.0.0.1:8080/ConnectorNode'
-export PROXY_URL='http://127.0.0.1:8080/ProxyNode'
-export NODE_METADATA_SSO_LOCATION='http://127.0.0.1:8080/ProxyNode/ColleagueRequest'
-export IDP_URL='http://127.0.0.1:8080/IdP'
-export IDP_SSO_URL='https://127.0.0.1:8080/IdP'
+export SP_URL='http://localhost:8080/SP'
+export CONNECTOR_URL='http://localhost:8080/ConnectorNode'
+export PROXY_URL='http://localhost:8080/ProxyNode'
+export NODE_METADATA_SSO_LOCATION='http://localhost:8080/ConnectorNode/ColleagueRequest'
+export IDP_URL='http://localhost:8080/IdP'
+export IDP_SSO_URL='https://localhost:8080/IdP'
 
 # ---------------------------
 # Start Tomcat

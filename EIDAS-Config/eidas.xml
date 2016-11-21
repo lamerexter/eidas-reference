@@ -48,9 +48,9 @@
 	<!-- Name of the second Service -->
 	<entry key="service2.name">LOCAL-EIDAS-CB</entry>
 	<!-- URL of the first Service -->
-	<entry key="service2.url">${PROXY_URL}/ColleagueRequest</entry>	
+	<entry key="service2.url">${CONNECTOR_URL}/ColleagueRequest</entry>	
 	<entry key="service2.skew">1000</entry>
-	<entry key="service2.metadata.url">${PROXY_URL}/ServiceMetadata</entry>	
+	<entry key="service2.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>	
 	<entry key="service3.id">CC</entry>
 	<!-- Name of the second Service -->
 	<entry key="service3.name">LOCAL-EIDAS-CC</entry>
@@ -218,7 +218,7 @@
        <!--service Metadata -->
         <entry key="service.node.url">${PROXY_URL}/</entry>
         <entry key="service.contact.email">test@com</entry>
-        <entry key="service.metadata.url">${PROXY_URL}/ServiceMetadata</entry>
+        <entry key="service.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
  	
 	<entry key="metadata.file.repository">c:\Pgm\projects\configeidas\tomcat\metadata</entry>
 	<entry key="metadata.http.retrieval">true</entry>
