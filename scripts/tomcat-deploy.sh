@@ -22,7 +22,7 @@ fi
 # Build
 # ---------------------------
 
-mvn --file "$project_root"/EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
+mvn --file "$project_root"/EIDAS-Parent package -P embedded -P coreDependencies -Dmaven.test.skip=true
 
 # ---------------------------
 # Deploy
@@ -43,7 +43,7 @@ for file in $FILES_TO_REPLACE; do
   sed -i '.original' 's/${NODE_/${PROXY_NODE_/g' $file
 done
 
-mvn --file EIDAS-Parent clean install -P embedded -P coreDependencies -Dmaven.test.skip=true
+mvn --file EIDAS-Parent package -P embedded -P coreDependencies -Dmaven.test.skip=true
 
 # Deploy the Proxy Node
 cp "$project_root"/EIDAS-Node/target/EidasNode.war "$CATALINA_HOME/webapps/ProxyNode.war"
@@ -107,4 +107,4 @@ export IDP_SSO_URL='https://localhost:8080/IdP'
 # Start Tomcat
 # ---------------------------
 
-catalina run
+catalina jpda run
