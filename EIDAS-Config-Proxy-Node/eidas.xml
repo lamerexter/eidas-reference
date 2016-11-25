@@ -218,7 +218,7 @@
        <!--service Metadata -->
         <entry key="service.node.url">${PROXY_URL}/</entry>
         <entry key="service.contact.email">test@com</entry>
-        <entry key="service.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
+        <entry key="service.metadata.url">${PROXY_URL}/ServiceMetadata</entry>
  	
 	<entry key="metadata.file.repository">c:\Pgm\projects\configeidas\tomcat\metadata</entry>
 	<entry key="metadata.http.retrieval">true</entry>
