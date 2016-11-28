@@ -104,6 +104,8 @@ export STUB_IDP_SIGNING_CERTIFICATE_SERIAL_NUMBER="5ae2153c3f9a99824df394abd65f9
 
 # URLs
 export SP_URL='http://localhost:8080/SP'
+export SERVICE_METADATA_URL='http://localhost:8080/ConnectorNode/ServiceMetadata'
+export PROXY_METADATA_URL='http://localhost:8080/ProxyNode/ServiceMetadata'
 export CONNECTOR_URL='http://localhost:8080/ConnectorNode'
 export PROXY_URL='http://localhost:8080/ProxyNode'
 export NODE_METADATA_SSO_LOCATION='http://localhost:8080/ConnectorNode/ColleagueRequest'
