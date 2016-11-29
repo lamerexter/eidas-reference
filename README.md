@@ -51,12 +51,12 @@ Deploying and running the applications:
 
 #### Where to find the applications
 
-Tomcat will run on ports 50400, 50401, 50402 and 50403, so if all is well the applications will be reachable at:
+Tomcat will run on ports 56000, 56001, 56002 and 56003, so if all is well the applications will be reachable at:
 
-* Stub Service Provider - [http://localhost:50400](http://localhost:50400)
-* Connector Node - [http://localhost:50401](http://localhost:50401)
-* Proxy Node - [http://localhost:50402](http://localhost:50402)
-* Stub Identity Provider - [http://localhost:50403](http://localhost:50403)
+* Stub Service Provider - [http://localhost:56000](http://localhost:56000)
+* Connector Node - [http://localhost:56001](http://localhost:56001)
+* Proxy Node - [http://localhost:56002](http://localhost:56002)
+* Stub Identity Provider - [http://localhost:56003](http://localhost:56003)
 
 
 ### Editing the code

@@ -10,10 +10,10 @@ TOMCAT_ZIP=${1?Usage $0 <path to tomcat zip>}
 
 (./shutdown-tomcat.sh || :) 2> /dev/null
 
-http_port=$STUB_SP_HTTP_PORT
-ajp_port=50410
-shutdown_port=50420
-redirect_port=50430
+http_port="$STUB_SP_HTTP_PORT"
+ajp_port="$((STUB_SP_HTTP_PORT + 10))"
+shutdown_port="$((STUB_SP_HTTP_PORT + 20))"
+redirect_port="$((STUB_SP_HTTP_PORT + 30))"
 
 mkdir -p "$EIDAS_TOMCAT_DIR"
 
