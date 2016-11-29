@@ -27,28 +27,36 @@ From the `EIDAS-Parent` folder run `mvn test`.
 
 ### Running the applications locally with Tomcat
 
-*Note (windows): the scripts for windows use [Powershell](https://msdn.microsoft.com/en-us/powershell/mt173057.aspx).
-If you haven't used Powershell before you'll need to [set your execution policy](https://technet.microsoft.com/en-us/library/hh849812.aspx)
-to allow it to run unsigned scripts (from powershell run `Set-ExecutionPolicy Unrestricted`).
-You also need to set CATALINA_HOME in Windows System Environment Variables - this should be your Tomcat root directory. 
-The advisable tomcat downoad is the zipped one and not tomcat windows service.*
+Setting up tomcat (you should only need to do this once):
 
 ```
-# Linux or OS X
-./scripts/tomcat-deploy.sh
+# Download a tomcat .zip file from https://tomcat.apache.org/download-80.cgi
 
-# Windows
-.\scripts\tomcat-deploy.ps1
+# This will create a folder with 4 tomcat instances (one for each of the stub-idp, connector-node, proxy-node and stub-sp) in ~/eidas-tomcat:
+./scripts/create-tomcat.sh ~/Downloads/apache-tomcat-8.5.8.zip
+```
+
+Deploying and running the applications:
+
+```
+# This will build and deploy the applications to their tomcat folders:
+./scripts/deploy-tomcat.sh
+
+# This will start the tomcat instances:
+./scripts/start-tomcat.sh
+
+# And when you're done, stop the instances with:
+./scripts/shutdown-tomcat.sh
 ```
 
 #### Where to find the applications
 
-By default tomcat will run on port 8080, so if all has gone well the applications will be reachable at:
+Tomcat will run on ports 50400, 50401, 50402 and 50403, so if all is well the applications will be reachable at:
 
-* Stub Service Provider - [http://localhost:8080/SP](http://localhost:8080/SP)
-* Connector Node - [http://localhost:8080/ConnectorNode](http://localhost:8080/ConnectorNode)
-* Proxy Node - [http://localhost:8080/ProxyNode](http://localhost:8080/ProxyNode)
-* Stub Identity Provider - [http://localhost:8080/IdP](http://localhost:8080/IdP)
+* Stub Service Provider - [http://localhost:50400](http://localhost:50400)
+* Connector Node - [http://localhost:50401](http://localhost:50401)
+* Proxy Node - [http://localhost:50402](http://localhost:50402)
+* Stub Identity Provider - [http://localhost:50403](http://localhost:50403)
 
 
 ### Editing the code
