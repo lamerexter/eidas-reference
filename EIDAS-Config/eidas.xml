@@ -14,7 +14,7 @@
 	<!-- <entry key="DEMO-SP">givenName;age;dateOfBirth;nationalityCode;isAgeOver;eIdentifier</entry> -->
 
 	<!-- Id of this Connector -->
-	<entry key="connector.id">CA</entry>
+	<entry key="connector.id">UK</entry>
 	<!-- Connector assertion URL -->
 	<entry key="connector.assertion.url">${CONNECTOR_URL}/ColleagueResponse</entry>
 	<!-- Connector destination URL -->
@@ -25,7 +25,7 @@
 	<!-- SP Application -->
 	<entry key="connector.spApplication">DEMO-connector</entry>
 	<!-- SP Country-->
-	<entry key="connector.spCountry">CA</entry>
+	<entry key="connector.spCountry">UK</entry>
 	<!-- SP Institution-->
 	<entry key="connector.spInstitution">DEMO-connector</entry>
 
@@ -34,8 +34,8 @@
 
 	<entry key="service.number">8</entry>
 
-	<entry key="service1.id">CA</entry>
-	<entry key="service1.name">LOCAL-EIDAS-CA</entry>
+	<entry key="service1.id">UK</entry>
+	<entry key="service1.name">LOCAL-EIDAS-UK</entry>
 	<entry key="service1.url">${CONNECTOR_URL}/ColleagueRequest</entry>
 	<entry key="service1.skew">1000</entry>
 	<entry key="service1.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
@@ -83,9 +83,9 @@
 	<entry key="service8.metadata.url">${COUNTRY_7_PROXY_URL}/ServiceMetadata</entry>
 
 	<!-- Id of this Service -->
-	<entry key="service.id">CA</entry>
+	<entry key="service.id">UK</entry>
 	<!-- Country Code of this Service -->
-	<entry key="service.countrycode">CA</entry>
+	<entry key="service.countrycode">UK</entry>
 	<!-- QAALevel of this Service -->
 	<entry key="service.maxQAAlevel">4</entry>
 	<!-- Present consent-type form? (true/false) -->
