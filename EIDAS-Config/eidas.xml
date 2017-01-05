@@ -32,67 +32,55 @@
 	<entry key="saml.sp">SP-Connector</entry>
 	<entry key="saml.service">Connector-Service</entry>
 
-	<!-- Number of known Service -->
 	<entry key="service.number">8</entry>
 
-    <entry key="service1.id">CA</entry>
-	<!-- Name of the second Service -->
+	<entry key="service1.id">CA</entry>
 	<entry key="service1.name">LOCAL-EIDAS-CA</entry>
-	<!-- URL of the first Service -->
-  <entry key="service1.url">${CONNECTOR_URL}/ColleagueRequest</entry>
-	 <!-- Skew time for Service-->
-        <entry key="service1.skew">1000</entry>
-	<!-- the url under which  service1 is publishing its metadata -->
-  <entry key="service1.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
-	<entry key="service2.id">NL</entry>
-	<!-- Name of the second Service -->
-	<entry key="service2.name">LOCAL-EIDAS-CB</entry>
-	<!-- URL of the first Service -->
-	<entry key="service2.url">${NL_PROXY_URL}/ColleagueRequest</entry>
+	<entry key="service1.url">${CONNECTOR_URL}/ColleagueRequest</entry>
+	<entry key="service1.skew">1000</entry>
+	<entry key="service1.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
+	
+	<entry key="service2.id">${COUNTRY_1_CODE}</entry>
+	<entry key="service2.name">${COUNTRY_1_NAME}</entry>
+	<entry key="service2.url">${COUNTRY_1_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service2.skew">1000</entry>
-	<entry key="service2.metadata.url">${NL_PROXY_URL}/ServiceMetadata</entry>
-	<entry key="service3.id">FR</entry>
-	<!-- Name of the second Service -->
-	<entry key="service3.name">LOCAL-EIDAS-CC</entry>
-	<!-- URL of the first Service -->
-	<entry key="service3.url">${FR_PROXY_URL}/ColleagueRequest</entry>
+	<entry key="service2.metadata.url">${COUNTRY_1_PROXY_URL}/ServiceMetadata</entry>
+	
+	<entry key="service3.id">${COUNTRY_2_CODE}</entry>
+	<entry key="service3.name">${COUNTRY_2_NAME}</entry>
+	<entry key="service3.url">${COUNTRY_2_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service3.skew">1000</entry>
-	<entry key="service3.metadata.url">${FR_PROXY_URL}/ServiceMetadata</entry>
-	<entry key="service4.id">CD</entry>
-	<!-- Name of the second Service -->
-	<entry key="service4.name">LOCAL-EIDAS-CD</entry>
-	<!-- URL of the first Service -->
-	<entry key="service4.url">http://vs-cis-k2:7001/EidasNode/ColleagueRequest</entry>
+	<entry key="service3.metadata.url">${COUNTRY_2_PROXY_URL}/ServiceMetadata</entry>
+
+	<entry key="service4.id">${COUNTRY_3_CODE}</entry>
+	<entry key="service4.name">${COUNTRY_3_NAME}</entry>
+	<entry key="service4.url">${COUNTRY_3_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service4.skew">1000</entry>
-	<entry key="service4.metadata.url">http://vs-cis-k2:7001/EidasNode/ServiceMetadata</entry>
-	<entry key="service5.id">AT</entry>
-	<!-- Name of the second Service -->
-	<entry key="service5.name">AT-VIDP Local</entry>
-	<!-- URL of the first Service -->
-	<entry key="service5.url">http://vs-cis-k2:8185/VIDP-V-PEPS-web/SendPEPSAuthnRequest</entry>
+	<entry key="service4.metadata.url">${COUNTRY_3_PROXY_URL}/ServiceMetadata</entry>
+
+	<entry key="service5.id">${COUNTRY_4_CODE}</entry>
+	<entry key="service5.name">${COUNTRY_4_NAME}</entry>
+	<entry key="service5.url">${COUNTRY_4_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service5.skew">1000</entry>
-	<entry key="service5.metadata.url">http://vs-cis-k2:8185/EidasNode/ServiceMetadata</entry>
- 	<entry key="service6.id">DE</entry>
-	<!-- Name of the second Service -->
-	<entry key="service6.name">DE-Local</entry>
-	<!-- URL of the first Service -->
-	<entry key="service6.url">http://vs-cis-k2:8185/VIDP-V-PEPS-web/SendPEPSAuthnRequest</entry>
-    <entry key="service6.skew">1000</entry>
-	<entry key="service6.metadata.url">http://vs-cis-k2:8185/EidasNode/ServiceMetadata</entry>
-	<entry key="service7.id">CF</entry>
-	<!-- Name of the second Service -->
-	<entry key="service7.name">LOCAL-EIDAS-CF</entry>
-	<entry key="service7.url">http://vs-cis-k2:9080/EidasNode/ColleagueRequest</entry>
+	<entry key="service5.metadata.url">${COUNTRY_4_PROXY_URL}/ServiceMetadata</entry>
+
+	<entry key="service6.id">${COUNTRY_5_CODE}</entry>
+	<entry key="service6.name">${COUNTRY_5_NAME}</entry>
+	<entry key="service6.url">${COUNTRY_5_PROXY_URL}/ColleagueRequest</entry>
+	<entry key="service6.skew">1000</entry>
+	<entry key="service6.metadata.url">${COUNTRY_5_PROXY_URL}/ServiceMetadata</entry>
+
+	<entry key="service7.id">${COUNTRY_6_CODE}</entry>
+	<entry key="service7.name">${COUNTRY_6_NAME}</entry>
+	<entry key="service7.url">${COUNTRY_6_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service7.skew">1000</entry>
-	<entry key="service7.metadata.url">http://vs-cis-k2:9080/EidasNode/ServiceMetadata</entry>
-	   <entry key="service8.id">CE</entry>
-	<!-- Name of the second Service -->
-	<entry key="service8.name">LOCAL-EIDAS-CE</entry>
-	<entry key="service8.url">http://vs-cis-k2/EidasNode/ColleagueRequest</entry>
+	<entry key="service7.metadata.url">${COUNTRY_6_PROXY_URL}/ServiceMetadata</entry>
+
+	<entry key="service8.id">${COUNTRY_7_CODE}</entry>
+	<entry key="service8.name">${COUNTRY_7_NAME}</entry>
+	<entry key="service8.url">${COUNTRY_7_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service8.skew">1000</entry>
-	<entry key="service8.metadata.url">http://vs-cis-k2/EidasNode/ServiceMetadata</entry>
-	<!-- URL of the first Service -->
-	<!-- service -->
+	<entry key="service8.metadata.url">${COUNTRY_7_PROXY_URL}/ServiceMetadata</entry>
 
 	<!-- Id of this Service -->
 	<entry key="service.id">CA</entry>
@@ -216,7 +204,7 @@
         <entry key="connector.metadata.url">${CONNECTOR_URL}/ConnectorMetadata</entry>
 
        <!--service Metadata -->
-        <entry key="service.node.url">${NL_PROXY_URL}/</entry>
+        <entry key="service.node.url">${PROXY_URL}/</entry>
         <entry key="service.contact.email">test@com</entry>
         <entry key="service.metadata.url">${SERVICE_METADATA_URL}</entry>
 
