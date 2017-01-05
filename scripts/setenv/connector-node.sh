@@ -17,10 +17,11 @@ export SP_URL="http://localhost:$STUB_SP_HTTP_PORT"
 export SERVICE_METADATA_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ServiceMetadata"
 export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
 export PROXY_METADATA_URL="http://localhost:$PROXY_NODE_HTTP_PORT/ServiceMetadata"
-export PROXY_URL="http://localhost:$PROXY_NODE_HTTP_PORT"
+export NL_PROXY_URL="http://localhost:$NL_PROXY_NODE_HTTP_PORT"
+export FR_PROXY_URL="http://localhost:$FR_PROXY_NODE_HTTP_PORT"
 export NODE_METADATA_SSO_LOCATION="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ColleagueRequest"
 
 # Shouldn't need these for the Connector, but set them to empty to stop the variable replacement complaining:
 export IDP_URL=''
 export IDP_SSO_URL=''
-
+export PROXY_URL=''
