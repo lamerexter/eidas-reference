@@ -17,11 +17,33 @@ export SP_URL="http://localhost:$STUB_SP_HTTP_PORT"
 export SERVICE_METADATA_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ServiceMetadata"
 export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
 export PROXY_METADATA_URL="http://localhost:$PROXY_NODE_HTTP_PORT/ServiceMetadata"
-export NL_PROXY_URL="http://localhost:$NL_PROXY_NODE_HTTP_PORT"
-export FR_PROXY_URL="http://localhost:$FR_PROXY_NODE_HTTP_PORT"
+
 export NODE_METADATA_SSO_LOCATION="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ColleagueRequest"
+
+export COUNTRY_1_CODE='NL'
+export COUNTRY_1_NAME='The Netherlands'
+export COUNTRY_1_PROXY_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT"
+
+export COUNTRY_2_CODE='FR'
+export COUNTRY_2_NAME='France'
+export COUNTRY_2_PROXY_URL="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_PORT"
 
 # Shouldn't need these for the Connector, but set them to empty to stop the variable replacement complaining:
 export IDP_URL=''
 export IDP_SSO_URL=''
 export PROXY_URL=''
+export COUNTRY_3_CODE=''
+export COUNTRY_3_NAME=''
+export COUNTRY_3_PROXY_URL=''
+export COUNTRY_4_CODE=''
+export COUNTRY_4_NAME=''
+export COUNTRY_4_PROXY_URL=''
+export COUNTRY_5_CODE=''
+export COUNTRY_5_NAME=''
+export COUNTRY_5_PROXY_URL=''
+export COUNTRY_6_CODE=''
+export COUNTRY_6_NAME=''
+export COUNTRY_6_PROXY_URL=''
+export COUNTRY_7_CODE=''
+export COUNTRY_7_NAME=''
+export COUNTRY_7_PROXY_URL=''

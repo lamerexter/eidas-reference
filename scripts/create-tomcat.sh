@@ -18,7 +18,7 @@ redirect_port="$((STUB_SP_HTTP_PORT + 30))"
 mkdir -p "$EIDAS_TOMCAT_DIR"
 
 index=0
-for instance in stub-sp connector-node proxy-node-nl proxy-node-fr stub-idp-nl stub-idp-fr
+for instance in stub-sp connector-node proxy-node-1 proxy-node-2 stub-idp-1 stub-idp-2
 do
   dest="$EIDAS_TOMCAT_DIR/tomcat-$instance"
   rm -rf $dest
