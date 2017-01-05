@@ -17,9 +17,9 @@ export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
 
 # Shouldn't need these for the SP, but set them to empty to stop the variable replacement complaining:
 export PROXY_METADATA_URL=''
-export PROXY_URL=''
-export NODE_METADATA_SSO_LOCATION=''
+export NL_PROXY_URL=''
+export FR_PROXY_URL=''
 export PROXY_NODE_METADATA_SSO_LOCATION=''
 export IDP_URL=''
 export IDP_SSO_URL=''
-
+export PROXY_URL=''
