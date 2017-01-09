@@ -24,8 +24,8 @@ export COUNTRY_1_CODE='NL'
 export COUNTRY_1_NAME='The Netherlands'
 export COUNTRY_1_PROXY_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT"
 
-export COUNTRY_2_CODE='FR'
-export COUNTRY_2_NAME='France'
+export COUNTRY_2_CODE='ES'
+export COUNTRY_2_NAME='Spain'
 export COUNTRY_2_PROXY_URL="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_PORT"
 
 # Shouldn't need these for the Connector, but set them to empty to stop the variable replacement complaining:

@@ -7,10 +7,41 @@
 <%@page import="java.io.InputStream"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="eu.eidas.auth.commons.EidasParameterKeys"%>
+
+<%@page import="java.util.Properties"%>
+<%@page import="eu.eidas.config.impl.EnvironmentVariableSubstitutor"%>
+<%@page import="eu.eidas.auth.commons.EIDASUtil"%>
+<%@page import="eu.eidas.idp.Constants"%>
+
 <%
 	String samlToken = request.getParameter(EidasParameterKeys.SAML_REQUEST.toString());
 	String signAssertion = request.getParameter("signAssertion");
 	String encryptAssertion = request.getParameter("encryptAssertion");
+
+	// <hack>
+    // This is a hack so we can style the Stub IdP differently
+    // depending on which country it is configured to be:
+    
+    Properties idpProperties = new EnvironmentVariableSubstitutor().mutatePropertiesReplaceValues(EIDASUtil.loadConfigs(Constants.IDP_PROPERTIES));
+	String countryCode = idpProperties.getProperty(Constants.IDP_COUNTRY);
+
+	String countryDescription;
+	if (countryCode.equals("NL")) {
+	    countryDescription = "The Netherlands";
+	}
+	else if (countryCode.equals("ES")) {
+	    countryDescription = "Spain";
+	}
+	else if (countryCode.equals("FR")) {
+	    countryDescription = "France";
+	}
+	else {
+	    countryDescription = "Unknown Country";
+	    countryCode = "CA";
+	}
+
+	// </hack>
+
 %>
 <html lang="en">
 
@@ -22,7 +53,7 @@
 <!--START HEADER-->
 <header class="header">
 	<div class="container">
-		<h1>eIDAS Authentication Service (IdP)</h1>
+		<h1><%= countryDescription %> (IdP) <img src="resources/img/flags/<%= countryCode %>.gif"</h1>
 	</div>
 </header>
 <!--END HEADER-->

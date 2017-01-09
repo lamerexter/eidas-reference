@@ -19,14 +19,12 @@ export COUNTRY_1_CODE='NL'
 export COUNTRY_1_NAME='The Netherlands'
 export COUNTRY_1_PROXY_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT"
 
-export COUNTRY_2_CODE='FR'
-export COUNTRY_2_NAME='France'
+export COUNTRY_2_CODE='ES'
+export COUNTRY_2_NAME='Spain'
 export COUNTRY_2_PROXY_URL="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_PORT"
 
 # Shouldn't need these for the SP, but set them to empty to stop the variable replacement complaining:
 export PROXY_METADATA_URL=''
-export NL_PROXY_URL=''
-export FR_PROXY_URL=''
 export PROXY_NODE_METADATA_SSO_LOCATION=''
 export IDP_URL=''
 export IDP_SSO_URL=''

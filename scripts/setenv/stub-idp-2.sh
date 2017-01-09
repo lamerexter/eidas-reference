@@ -17,6 +17,8 @@ export NODE_METADATA_SSO_LOCATION="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_P
 export IDP_URL="http://localhost:$COUNTRY_2_STUB_IDP_HTTP_PORT"
 export IDP_SSO_URL="http://localhost:$COUNTRY_2_STUB_IDP_HTTP_PORT"
 
+export IDP_COUNTRY_CODE="ES"
+
 # Shouldn't need these for the IdP, but set them to empty to stop the variable replacement complaining:
 export SP_URL=''
 export SERVICE_METADATA_URL=''
