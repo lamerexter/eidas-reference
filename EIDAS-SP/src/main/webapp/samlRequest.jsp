@@ -31,7 +31,7 @@
                 </div>
                 <jsp:include page="leftColumn.jsp"/>
                 <div class="col-md-6">
-                    <form id="countrySelector" name="countrySelector" action="<s:property value="defaultActionUrl" />" target="_parent" onsubmit="setSAMRequestMethod();">
+                    <form id="countrySelector" name="countrySelector" action="<s:property value="defaultActionUrl" />" method="post" target="_parent" onsubmit="setSAMRequestMethod();">
                         <input type="hidden" id="postLocationUrl" name="postLocationUrl" value="<s:property value="postActionUrl" />">
                         <input type="hidden" id="redirectLocationUrl" name="redirectLocationUrl" value="<s:property value="redirectActionUrl" />">
                         <div class="form-group">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="button-group">
-                            <button id="submit_saml" type="button" class="btn btn-default btn-lg btn-block" onclick="$('#countrySelector').submit();">Submit</button>
+                            <button id="submit_saml" type="submit" class="btn btn-default btn-lg btn-block" onclick="$('#countrySelector').submit();">Submit</button>
                         </div>
                     </form>
                     <form id="samlRequestXML" name="samlRequestXML" action="reSign">
