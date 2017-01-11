@@ -177,7 +177,7 @@
              http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512 </entry>
 
        <!-- signing response assertion true/false (default false) -->
-        <entry key="response.sign.assertions">false</entry>
+        <entry key="response.sign.assertions">true</entry>
 
        <!-- Encryption algorithm -->
         <entry key="data.encryption.algorithm"></entry>
