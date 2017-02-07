@@ -1,0 +1,35 @@
+eidas:
+  image: eidas/tomcat:8-oracle-java8
+  environment:
+    - "SP_URL=http://stup-sp"
+    - "SERVICE_METADATA_URL=http://connector-node/ServiceMetadata"
+    - "CONNECTOR_URL=http://connector-node"
+
+    - "COUNTRY_1_CODE=NL"
+    - "COUNTRY_1_NAME=The Netherlands"
+    - "COUNTRY_1_PROXY_URL=http://proxy-node-1"
+
+    - "COUNTRY_2_CODE=ES"
+    - "COUNTRY_2_NAME=Spain"
+    - "COUNTRY_2_PROXY_URL=http://proxy-node-2"
+
+    - "PROXY_METADATA_URL="
+    - "PROXY_NODE_METADATA_SSO_LOCATION="
+    - "IDP_URL="
+    - "IDP_SSO_URL="
+    - "PROXY_URL="
+    - "COUNTRY_3_CODE="
+    - "COUNTRY_3_NAME="
+    - "COUNTRY_3_PROXY_URL="
+    - "COUNTRY_4_CODE="
+    - "COUNTRY_4_NAME="
+    - "COUNTRY_4_PROXY_URL="
+    - "COUNTRY_5_CODE="
+    - "COUNTRY_5_NAME="
+    - "COUNTRY_5_PROXY_URL="
+    - "COUNTRY_6_CODE="
+    - "COUNTRY_6_NAME="
+    - "COUNTRY_6_PROXY_URL="
+    - "COUNTRY_7_CODE="
+    - "COUNTRY_7_NAME="
+    - "COUNTRY_7_PROXY_URL="

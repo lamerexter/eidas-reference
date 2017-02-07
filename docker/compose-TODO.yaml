@@ -1,0 +1,24 @@
+proxy-node-1:
+  image: eidas/tomcat:8-oracle-java8
+  ports:
+    - "56002:8080"
+  volumes:
+    - ./EIDAS-Node/target/EidasNode.war:/usr/local/tomcat/webapps/ROOT.war
+proxy-node-2:
+  image: eidas/tomcat:8-oracle-java8
+  ports:
+    - "56003:8080"
+  volumes:
+    - ./EIDAS-Node/target/EidasNode.war:/usr/local/tomcat/webapps/ROOT.war
+stub-idp-1:
+  image: eidas/tomcat:8-oracle-java8
+  ports:
+    - "56004:8080"
+  volumes:
+    - ./EIDAS-IdP-1.0/target/IdP.war:/usr/local/tomcat/webapps/ROOT.war
+stub-idp-2:
+  image: eidas/tomcat:8-oracle-java8
+  ports:
+    - "56005:8080"
+  volumes:
+    - ./EIDAS-IdP-1.0/target/IdP.war:/usr/local/tomcat/webapps/ROOT.war
