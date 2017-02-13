@@ -150,6 +150,25 @@
     </logger>
 
     <!--
+      GDS log level suppression
+    -->
+    <logger name="httpclient.wire">
+        <level value="info" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="eIDASNodeDetail"/>
+    </logger>
+    <logger name="org.apache.commons.httpclient">
+        <level value="info" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="eIDASNodeDetail"/>
+    </logger>
+    <logger name="eu.eidas.node.security">
+        <level value="info" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="eIDASNodeDetail"/>
+    </logger>
+
+    <!--
         The root level is set to debug for development purposes, for production environment it could be set to INFO
     -->
     <root level="DEBUG">
