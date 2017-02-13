@@ -6,8 +6,8 @@
 	<!-- QAALevel of the Demo SP -->
 	<entry key="DEMO-SP.qaalevel">3</entry>
 
-	
-	<!-- IF a SP is not listed, the DEFAULT parameters it can access might be 
+
+	<!-- IF a SP is not listed, the DEFAULT parameters it can access might be
 		(none|all|list;Of;Parameters) -->
 	<entry key="sp.default.parameters">all</entry>
 	<!-- Specific case for a listed SP (none|all|list;Of;Parameters) -->
@@ -18,7 +18,7 @@
 	<!-- Connector assertion URL -->
 	<entry key="connector.assertion.url">${CONNECTOR_URL}/ColleagueResponse</entry>
 	<!-- Connector destination URL -->
-	<entry key="connector.destination.url">${CONNECTOR_URL}/ServiceProvider</entry>
+	<entry key="connector.destination.url">${EXT_CONNECTOR_URL}/ServiceProvider</entry>
 	<!--  Default SP attributes needed on the VIdP -->
 	<!-- SP Sector -->
 	<entry key="connector.spSector">DEMO-connector</entry>
@@ -39,13 +39,13 @@
 	<entry key="service1.url">${CONNECTOR_URL}/ColleagueRequest</entry>
 	<entry key="service1.skew">1000</entry>
 	<entry key="service1.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
-	
+
 	<entry key="service2.id">${COUNTRY_1_CODE}</entry>
 	<entry key="service2.name">${COUNTRY_1_NAME}</entry>
 	<entry key="service2.url">${COUNTRY_1_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service2.skew">1000</entry>
 	<entry key="service2.metadata.url">${COUNTRY_1_PROXY_URL}/ServiceMetadata</entry>
-	
+
 	<entry key="service3.id">${COUNTRY_2_CODE}</entry>
 	<entry key="service3.name">${COUNTRY_2_NAME}</entry>
 	<entry key="service3.url">${COUNTRY_2_PROXY_URL}/ColleagueRequest</entry>
@@ -268,7 +268,7 @@
 	-->
 	<entry key="node.metadata.not.signed.descriptors"></entry>
 	<!-- connector metadata url, advertising connector as IdP, for communication with the SP -->
-	<entry key="connector.responder.metadata.url">${CONNECTOR_URL}/ConnectorResponderMetadata</entry>
+	<entry key="connector.responder.metadata.url">${EXT_CONNECTOR_URL}/ConnectorResponderMetadata</entry>
 	<!-- service/Specific metadata url, advertising connector as SP - for communication with the IdP -->
 	<entry key="service.requester.metadata.url">${PROXY_URL}/ServiceRequesterMetadata</entry>
 

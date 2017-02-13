@@ -1,23 +1,28 @@
 eidas:
   image: eidas/tomcat:8-oracle-java8
   environment:
-    - "SP_URL=http://stup-sp"
-    - "SERVICE_METADATA_URL=http://connector-node/ServiceMetadata"
-    - "CONNECTOR_URL=http://connector-node"
+    - "SP_URL=http://stup-sp:${DEFAULT_TOMCAT_PORT}"
+    - "SERVICE_METADATA_URL=http://connector-node:${DEFAULT_TOMCAT_PORT}/ServiceMetadata"
+    - "CONNECTOR_URL=http://localhost:${CONNECTOR_NODE_HTTP_PORT}"
+    - "CONNECTOR_METADATA_URL=http://connector-node:${DEFAULT_TOMCAT_PORT}"
 
-    - "COUNTRY_1_CODE=NL"
-    - "COUNTRY_1_NAME=The Netherlands"
-    - "COUNTRY_1_PROXY_URL=http://proxy-node-1"
+    - "COUNTRY_1_PROXY_URL=http://localhost:${COUNTRY_1_PROXY_NODE_HTTP_PORT}"
+    - "COUNTRY_1_PROXY_METADATA_URL=http://proxy-node-1:${DEFAULT_TOMCAT_PORT}"
 
-    - "COUNTRY_2_CODE=ES"
-    - "COUNTRY_2_NAME=Spain"
-    - "COUNTRY_2_PROXY_URL=http://proxy-node-2"
+    - "COUNTRY_2_PROXY_URL=http://localhost:${COUNTRY_2_PROXY_NODE_HTTP_PORT}"
+    - "COUNTRY_2_PROXY_METADATA_URL=http://proxy-node-2:${DEFAULT_TOMCAT_PORT}"
 
     - "PROXY_METADATA_URL="
     - "PROXY_NODE_METADATA_SSO_LOCATION="
     - "IDP_URL="
     - "IDP_SSO_URL="
     - "PROXY_URL="
+    - "COUNTRY_1_CODE=NL"
+    - "COUNTRY_1_NAME=The Netherlands"
+    - "COUNTRY_1_PROXY_URL="
+    - "COUNTRY_2_CODE=ES"
+    - "COUNTRY_2_NAME=Spain"
+    - "COUNTRY_2_PROXY_URL="
     - "COUNTRY_3_CODE="
     - "COUNTRY_3_NAME="
     - "COUNTRY_3_PROXY_URL="
