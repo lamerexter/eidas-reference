@@ -9,10 +9,17 @@ RUN apt-get install -y apt-transport-https
 RUN echo "deb [arch=amd64 ] https://packages.ida.digital.cabinet-office.gov.uk/ main main" > /etc/apt/sources.list.d/ida-aptly_main.list
 RUN apt-get update
 RUN apt-get install --force-yes -y oracle-java8-jre
-RUN apt-get install -y --force-yes curl
+RUN apt-get install -y curl
+RUN apt-get install -y unzip
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo "export JAVA_HOME=/usr/lib/jvm/jre-8-oracle-x64" >> ~/.bashrc
+
+ENV JAVA_VERSION_MAJOR=8
+RUN curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" -o /tmp/jce_policy-${JAVA_VERSION_MAJOR}.zip \
+        http://download.oracle.com/otn-pub/java/jce/${JAVA_VERSION_MAJOR}/jce_policy-${JAVA_VERSION_MAJOR}.zip && \
+      cd /tmp && unzip /tmp/jce_policy-${JAVA_VERSION_MAJOR}.zip && \
+      cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/jre-8-oracle-x64/lib/security/;
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -42,4 +49,9 @@ RUN set -x \
  && rm tomcat.tar.gz*
 
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+# CMD ["catalina.sh", "jpda run"]
+
+ENV JPDA_ADDRESS 8000
+ENV JPDA_TRANSPORT dt_socket
+EXPOSE 8000
+CMD ["catalina.sh", "jpda", "run"]
