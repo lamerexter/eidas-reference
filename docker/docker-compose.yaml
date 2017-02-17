@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   stub-sp:
-    image: eidas/tomcat:8-oracle-java8
+    image: eidas/tomcat:8.5.11-jre8-alpine-UnlimitedJCEPolicyJDK8
     ports:
       - "${STUB_SP_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
@@ -58,7 +58,7 @@ services:
       - "COUNTRY_7_PROXY_URL="
 
   connector-node:
-    image: eidas/tomcat:8-oracle-java8
+    image: eidas/tomcat:8.5.11-jre8-alpine-UnlimitedJCEPolicyJDK8
     ports:
       - "${CONNECTOR_NODE_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
@@ -117,10 +117,10 @@ services:
       - "COUNTRY_7_PROXY_URL="
 
   proxy-node-1:
-    image: eidas/tomcat:8-oracle-java8
+    image: eidas/tomcat:8.5.11-jre8-alpine-UnlimitedJCEPolicyJDK8
     ports:
       - "${COUNTRY_1_PROXY_NODE_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
-      - "${EXPOSED_TOMCAT_DEBUG_PORT}:${DEFAULT_TOMCAT_JPDA_PORT}"
+      #- "${EXPOSED_TOMCAT_DEBUG_PORT}:${DEFAULT_TOMCAT_JPDA_PORT}"
     volumes:
       - ../EIDAS-Node/target/EidasNode.war:/usr/local/tomcat/webapps/ROOT.war
       - ../EIDAS-Node/target/EidasNode:/usr/local/tomcat/webapps/ROOT
@@ -173,7 +173,7 @@ services:
       - "COUNTRY_7_PROXY_URL="
 
   proxy-node-2:
-    image: eidas/tomcat:8-oracle-java8
+    image: eidas/tomcat:8.5.11-jre8-alpine-UnlimitedJCEPolicyJDK8
     ports:
       - "${COUNTRY_2_PROXY_NODE_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
@@ -228,7 +228,7 @@ services:
       - "COUNTRY_7_PROXY_URL="
 
   stub-idp-1:
-    image: eidas/tomcat:8-oracle-java8
+    image: eidas/tomcat:8.5.11-jre8-alpine-UnlimitedJCEPolicyJDK8
     ports:
       - "${COUNTRY_1_STUB_IDP_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
@@ -280,7 +280,7 @@ services:
       - "COUNTRY_7_PROXY_URL="
 
   stub-idp-2:
-    image: eidas/tomcat:8-oracle-java8
+    image: eidas/tomcat:8.5.11-jre8-alpine-UnlimitedJCEPolicyJDK8
     ports:
       - "${COUNTRY_2_STUB_IDP_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
