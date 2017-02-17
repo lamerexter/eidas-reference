@@ -12,8 +12,10 @@ export STUB_SP_SIGNING_CERTIFICATE_DISTINGUSHED_NAME="CN=Test Stub SP Metadata S
 export STUB_SP_SIGNING_CERTIFICATE_SERIAL_NUMBER="123f7141d99aa3b6ad31211dabb9ca7abdc08b5d"
 
 export SP_URL="http://localhost:$STUB_SP_HTTP_PORT"
+export EXT_SP_URL="http://localhost:$STUB_SP_HTTP_PORT"
 export SERVICE_METADATA_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ServiceMetadata"
 export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
+export EXT_CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
 
 export COUNTRY_1_CODE='NL'
 export COUNTRY_1_NAME='The Netherlands'
@@ -24,7 +26,8 @@ export COUNTRY_2_NAME='Spain'
 export COUNTRY_2_PROXY_URL="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_PORT"
 
 # Shouldn't need these for the SP, but set them to empty to stop the variable replacement complaining:
-export PROXY_METADATA_URL=''
+export EXT_IDP_URL=''
+export EXT_PROXY_URL=''
 export PROXY_NODE_METADATA_SSO_LOCATION=''
 export IDP_URL=''
 export IDP_SSO_URL=''
