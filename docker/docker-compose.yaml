@@ -6,12 +6,11 @@ services:
       - "${STUB_SP_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
       - ../EIDAS-SP/target/SP.war:/usr/local/tomcat/webapps/ROOT.war
-      - ../EIDAS-SP/target/SP:/usr/local/tomcat/webapps/ROOT
-      - ../EIDAS-Config:/usr/local/share/eidas
+    tmpfs: /usr/local/tomcat/webapps
     networks:
       - stub-connector
     environment:
-      - "EIDAS_CONFIG_REPOSITORY=/usr/local/share/eidas/"
+      - "EIDAS_CONFIG_REPOSITORY=/usr/local/tomcat/webapps/ROOT/WEB-INF"
       - "STUB_SP_KEYSTORE=/usr/local/tomcat/webapps/ROOT/WEB-INF/stubSpKeystore.jks"
       - "STUB_SP_KEYSTORE_PASSWORD=Password"
       - "STUB_SP_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME=CN=Test Stub SP Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK"
@@ -60,8 +59,8 @@ services:
       - "${CONNECTOR_NODE_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
       - ../EIDAS-Node/target/EidasNode.war:/usr/local/tomcat/webapps/ROOT.war
-      - ../EIDAS-Node/target/EidasNode:/usr/local/tomcat/webapps/ROOT
       - ../EIDAS-Config:/usr/local/share/eidas
+    tmpfs: /usr/local/tomcat/webapps
     networks:
       - stub-connector
       - connector-proxy1
@@ -118,8 +117,8 @@ services:
       #- "${EXPOSED_TOMCAT_DEBUG_PORT}:${DEFAULT_TOMCAT_JPDA_PORT}"
     volumes:
       - ../EIDAS-Node/target/EidasNode.war:/usr/local/tomcat/webapps/ROOT.war
-      - ../EIDAS-Node/target/EidasNode:/usr/local/tomcat/webapps/ROOT
       - ../EIDAS-Config:/usr/local/share/eidas
+    tmpfs: /usr/local/tomcat/webapps
     networks:
       - connector-proxy1
       - proxy1-idp1
@@ -173,8 +172,8 @@ services:
       - "${COUNTRY_2_PROXY_NODE_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
       - ../EIDAS-Node/target/EidasNode.war:/usr/local/tomcat/webapps/ROOT.war
-      - ../EIDAS-Node/target/EidasNode:/usr/local/tomcat/webapps/ROOT
       - ../EIDAS-Config:/usr/local/share/eidas
+    tmpfs: /usr/local/tomcat/webapps
     networks:
       - connector-proxy2
       - proxy2-idp2
@@ -228,8 +227,8 @@ services:
       - "${COUNTRY_1_STUB_IDP_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
       - ../EIDAS-IdP-1.0/target/IdP.war:/usr/local/tomcat/webapps/ROOT.war
-      - ../EIDAS-IdP-1.0/target/IdP:/usr/local/tomcat/webapps/ROOT
       - ../EIDAS-Config:/usr/local/share/eidas
+    tmpfs: /usr/local/tomcat/webapps
     networks:
       - proxy1-idp1
     environment:
@@ -280,8 +279,8 @@ services:
       - "${COUNTRY_2_STUB_IDP_HTTP_PORT}:${DEFAULT_TOMCAT_PORT}"
     volumes:
       - ../EIDAS-IdP-1.0/target/IdP.war:/usr/local/tomcat/webapps/ROOT.war
-      - ../EIDAS-IdP-1.0/target/IdP:/usr/local/tomcat/webapps/ROOT
       - ../EIDAS-Config:/usr/local/share/eidas
+    tmpfs: /usr/local/tomcat/webapps
     networks:
       - proxy2-idp2
     environment:
