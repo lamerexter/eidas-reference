@@ -12,7 +12,7 @@
 - Stop the docker containers
   `docker-compose down`     stops the containers and cleans up
 
-Alternately
+Alternatively
 use the `deploy_and_run_docker.sh` and the `stop_docker_and_cleanup.sh` scripts which do the above
 
 For debugging the JPDA ports will need to be exposed. Follow the instructions in the Dockerfile and rebuild the image
