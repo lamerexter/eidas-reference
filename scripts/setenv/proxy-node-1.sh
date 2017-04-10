@@ -16,13 +16,16 @@ export NODE_SIGNING_CERTIFICATE_SERIAL_NUMBER="203b6cb0714922c675e08606187e75c4c
 export SERVICE_METADATA_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT/ServiceMetadata"
 export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
 export PROXY_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT"
-export PROXY_METADATA_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT/ServiceMetadata"
+export EXT_PROXY_URL="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT"
 export NODE_METADATA_SSO_LOCATION="http://localhost:$COUNTRY_1_PROXY_NODE_HTTP_PORT/ColleagueRequest"
 export IDP_URL="http://localhost:$COUNTRY_1_STUB_IDP_HTTP_PORT"
+export EXT_IDP_URL="http://localhost:$COUNTRY_1_STUB_IDP_HTTP_PORT"
 export IDP_SSO_URL="http://localhost:$COUNTRY_1_STUB_IDP_HTTP_PORT"
+export EXT_CONNECTOR_URL=''
+export SP_URL=''
+export EXT_SP_URL=''
 
 # Shouldn't need this for the Proxy, but set it to empty to stop the variable replacement complaining:
-export SP_URL=''
 export COUNTRY_1_CODE=''
 export COUNTRY_1_NAME=''
 export COUNTRY_1_PROXY_URL=''

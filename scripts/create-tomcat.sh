@@ -23,7 +23,7 @@ do
   dest="$EIDAS_TOMCAT_DIR/tomcat-$instance"
   rm -rf $dest
   unzip -q -d "$dest" "$TOMCAT_ZIP" && f=("$dest"/*) && mv "$dest"/*/* "$dest" && rmdir "${f[@]}"
-  sed -i '.backup' -e "s/8080/$((http_port + index))/g" -e "s/8009/$((ajp_port + index))/g" -e "s/8005/$((shutdown_port + index))/g" -e "s/8443/$((redirect_port + index))/g" $dest/conf/server.xml
+  sed -i.backup -e "s/8080/$((http_port + index))/g" -e "s/8009/$((ajp_port + index))/g" -e "s/8005/$((shutdown_port + index))/g" -e "s/8443/$((redirect_port + index))/g" $dest/conf/server.xml
   chmod +x $dest/bin/*.sh
   rm -r $dest/webapps/ROOT
 

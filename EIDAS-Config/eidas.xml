@@ -6,8 +6,8 @@
 	<!-- QAALevel of the Demo SP -->
 	<entry key="DEMO-SP.qaalevel">3</entry>
 
-	
-	<!-- IF a SP is not listed, the DEFAULT parameters it can access might be 
+
+	<!-- IF a SP is not listed, the DEFAULT parameters it can access might be
 		(none|all|list;Of;Parameters) -->
 	<entry key="sp.default.parameters">all</entry>
 	<!-- Specific case for a listed SP (none|all|list;Of;Parameters) -->
@@ -16,9 +16,9 @@
 	<!-- Id of this Connector -->
 	<entry key="connector.id">UK</entry>
 	<!-- Connector assertion URL -->
-	<entry key="connector.assertion.url">${CONNECTOR_URL}/ColleagueResponse</entry>
+	<entry key="connector.assertion.url">${EXT_CONNECTOR_URL}/ColleagueResponse</entry>
 	<!-- Connector destination URL -->
-	<entry key="connector.destination.url">${CONNECTOR_URL}/ServiceProvider</entry>
+	<entry key="connector.destination.url">${EXT_CONNECTOR_URL}/ServiceProvider</entry>
 	<!--  Default SP attributes needed on the VIdP -->
 	<!-- SP Sector -->
 	<entry key="connector.spSector">DEMO-connector</entry>
@@ -36,16 +36,16 @@
 
 	<entry key="service1.id">UK</entry>
 	<entry key="service1.name">LOCAL-EIDAS-UK</entry>
-	<entry key="service1.url">${CONNECTOR_URL}/ColleagueRequest</entry>
+	<entry key="service1.url">${EXT_CONNECTOR_URL}/ColleagueRequest</entry>
 	<entry key="service1.skew">1000</entry>
 	<entry key="service1.metadata.url">${CONNECTOR_URL}/ServiceMetadata</entry>
-	
+
 	<entry key="service2.id">${COUNTRY_1_CODE}</entry>
 	<entry key="service2.name">${COUNTRY_1_NAME}</entry>
 	<entry key="service2.url">${COUNTRY_1_PROXY_URL}/ColleagueRequest</entry>
 	<entry key="service2.skew">1000</entry>
 	<entry key="service2.metadata.url">${COUNTRY_1_PROXY_URL}/ServiceMetadata</entry>
-	
+
 	<entry key="service3.id">${COUNTRY_2_CODE}</entry>
 	<entry key="service3.name">${COUNTRY_2_NAME}</entry>
 	<entry key="service3.url">${COUNTRY_2_PROXY_URL}/ColleagueRequest</entry>
@@ -93,9 +93,9 @@
 	<!-- Present consent-value form? (true/false) -->
 	<entry key="service.askconsent.value">false</entry>
 	<!-- Method to call after IdP -->
-	<entry key="service.specificidpredirect.url">${PROXY_URL}/IdpResponse</entry>
+	<entry key="service.specificidpredirect.url">${EXT_PROXY_URL}/IdpResponse</entry>
 	<!-- Method to call after AP -->
-	<entry key="service.specificapredirect.url">${CONNECTOR_URL}/APSelector</entry>
+	<entry key="service.specificapredirect.url">${EXT_CONNECTOR_URL}/APSelector</entry>
 	<!-- Action of Citizen Consent -->
 	<entry key="service.citizenConsentUrl">CitizenConsent</entry>
 
@@ -216,8 +216,8 @@
 	<entry key="ssos.serviceMetadataGeneratorIDP.post.location">${NODE_METADATA_SSO_LOCATION}</entry>
 
          <!-- Eidas Node Service Metadata Single Sign On locations for ConnectorResponseMetadata-->
-	<entry key="ssos.connectorMetadataGeneratorIDP.redirect.location">${CONNECTOR_URL}/ServiceProvider</entry>
-	<entry key="ssos.connectorMetadataGeneratorIDP.post.location">${CONNECTOR_URL}/ServiceProvider</entry>
+	<entry key="ssos.connectorMetadataGeneratorIDP.redirect.location">${EXT_CONNECTOR_URL}/ServiceProvider</entry>
+	<entry key="ssos.connectorMetadataGeneratorIDP.post.location">${EXT_CONNECTOR_URL}/ServiceProvider</entry>
 
 	<!--
         Check that the citizen country code in the SAMLRequest is the same than the country of the Service signing certificate

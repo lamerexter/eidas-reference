@@ -14,9 +14,10 @@ export NODE_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER="1dcfdeedc8983a5f13f2338e0814b6
 export NODE_SIGNING_CERTIFICATE_SERIAL_NUMBER="56520de46a76cb6ad7b9c238dd253d88904da9d8"
 
 export SP_URL="http://localhost:$STUB_SP_HTTP_PORT"
+export EXT_SP_URL="http://localhost:$STUB_SP_HTTP_PORT"
 export SERVICE_METADATA_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ServiceMetadata"
 export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
-export PROXY_METADATA_URL="http://localhost:$PROXY_NODE_HTTP_PORT/ServiceMetadata"
+export EXT_CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
 
 export NODE_METADATA_SSO_LOCATION="http://localhost:$CONNECTOR_NODE_HTTP_PORT/ColleagueRequest"
 
@@ -29,6 +30,8 @@ export COUNTRY_2_NAME='Spain'
 export COUNTRY_2_PROXY_URL="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_PORT"
 
 # Shouldn't need these for the Connector, but set them to empty to stop the variable replacement complaining:
+export EXT_IDP_URL=''
+export EXT_PROXY_URL=''
 export IDP_URL=''
 export IDP_SSO_URL=''
 export PROXY_URL=''
