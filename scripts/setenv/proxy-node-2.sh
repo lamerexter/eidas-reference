@@ -7,11 +7,11 @@ export EIDAS_CONFIG_REPOSITORY=./EIDAS-Config/
 export NODE_KEYSTORE="./EIDAS-Node/target/EidasNode/WEB-INF/proxyNodeKeystore.jks"
 export NODE_KEYSTORE_PASSWORD="Password"
 
-export NODE_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME="CN=Test Proxy Encryption 20262026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK"
-export NODE_SIGNING_CERTIFICATE_DISTINGUISHED_NAME="CN=Test Proxy Metadata Signing 20262026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK"
+export NODE_ENCRYPTION_CERTIFICATE_DISTINGUISHED_NAME="CN=Test Proxy Encryption 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK"
+export NODE_SIGNING_CERTIFICATE_DISTINGUISHED_NAME="CN=Test Proxy Metadata Signing 20161026, OU=Government Digital Service, O=Cabinet Office, L=London, ST=Greater London, C=UK"
 
-export NODE_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER="6642726bee633fb628dbd85b7d42e63b62046c2d"
-export NODE_SIGNING_CERTIFICATE_SERIAL_NUMBER="203b6cb0724922c675e08606287e75c4c4457a2c"
+export NODE_ENCRYPTION_CERTIFICATE_SERIAL_NUMBER="6641716bee633fb618dbd85b7d41e63b62046c2d"
+export NODE_SIGNING_CERTIFICATE_SERIAL_NUMBER="203b6cb0714922c675e08606187e75c4c4457a1c"
 
 export SERVICE_METADATA_URL="http://localhost:$COUNTRY_2_PROXY_NODE_HTTP_PORT/ServiceMetadata"
 export CONNECTOR_URL="http://localhost:$CONNECTOR_NODE_HTTP_PORT"
