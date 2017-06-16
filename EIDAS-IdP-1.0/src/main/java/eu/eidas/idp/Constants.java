@@ -28,6 +28,7 @@ public interface Constants {
     public static String IDP_PROPERTIES="idp.properties";
     public static String IDP_METADATA_URL="idp.metadata.url";
     public static String IDP_COUNTRY="idp.country";
+    public static String HUB_SSL_CERT_BASE64="hub.ssl.metadata.service.certificate";
 
     public static String SSOS_POST_LOCATION_URL = "idp.ssos.post.location";
     public static String SSOS_REDIRECT_LOCATION_URL = "idp.ssos.redirect.location";
